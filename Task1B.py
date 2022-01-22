@@ -1,6 +1,5 @@
 from floodsystem.geo import stations_by_distance
 from floodsystem.stationdata import build_station_list
-from haversine import haversine, Unit
 
 def run():
     """Requirements for Task 1B"""
