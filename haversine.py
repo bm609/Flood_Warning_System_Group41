@@ -1,3 +1,5 @@
+#Haversine module installed from https://github.com/mapado/haversine, credit to Mapodo developer and contributors 
+
 from math import radians, cos, sin, asin, sqrt, degrees, pi, atan2
 from enum import Enum
 from typing import Union
