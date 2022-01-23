@@ -11,7 +11,7 @@ from .utils import sorted_by_key  # noqa
 def stations_by_distance(stations, p):
     station_dist = []   #initialise list
     for i in stations:
-        station_dist.append([i.name, i.town, haversine(i.coord, p)]) #add current iterations station name, town, and distance. haversine default unit is km
+        station_dist.append((i.name, i.town, haversine(i.coord, p))) #add current iterations station name, town, and distance. haversine default unit is km
     station_dist.sort(key = lambda x: x[2]) #sorts list by third element (the distance) represented by x[2]
     return station_dist
     
