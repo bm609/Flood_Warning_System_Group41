@@ -35,4 +35,13 @@ def stations_by_river(stations):
         riverstation[i.river].append(i.name) #appends station name to respective river for every station
     return riverstation
 
+#Code for 1C
+def stations_within_radius(stations, centre, r):
+    station_dist_within_r = []   #initialise list
+    
+    for i in stations:
+        if haversine(i.coord, centre)<=r:
+            station_dist_within_r.append((i.name, i.town, haversine(i.coord, centre))) #add current iterations station name, town, and distance. haversine default unit is km
+            station_dist_within_r.sort(key = lambda x: x[2])
+    return station_dist_within_r
     
