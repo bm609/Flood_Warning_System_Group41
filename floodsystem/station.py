@@ -42,6 +42,8 @@ class MonitoringStation:
         return d
 
     def typical_range_consistent(self):
+        """method which returns false if the typical range attribute is not in the form (low range, highrange) where 
+         highrange > lowrange """
         d = bool
         if self.typical_range == None:      #if the type is none
             return False
@@ -52,6 +54,8 @@ class MonitoringStation:
        
 
 def inconsistent_typical_range_stations(stations):
+    """input of list of monitoring station type. output of list of all monitoring station class having iconsistent range data,
+     as determined by the typical_range_consistent method."""
     incon = []
     for i in stations:       #for each station, check validity of range and append if invalid
         if i.typical_range_consistent() == False:
