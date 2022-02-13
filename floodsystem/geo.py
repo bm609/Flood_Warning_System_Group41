@@ -44,4 +44,22 @@ def stations_within_radius(stations, centre, r):
             station_dist_within_r.append((i.name, i.town, haversine(i.coord, centre))) #add current iterations station name, town, and distance. haversine default unit is km
             station_dist_within_r.sort(key = lambda x: x[2])
     return station_dist_within_r
-    
+
+#code for 1E
+
+def rivers_by_station_number(stations, N):
+    # return the N rivers with the greatest number of monitoring stations ,
+    from .utils import sorted_by_key
+    from collections import Counter
+
+    r_L=[]
+    for i in stations:
+        r_L.append(i.river)
+    # counting the frequency of rivers appearing in the list
+    data=list(Counter(r_L).items())
+    # sort and extracting the first N rivers
+    data.sort(key = lambda x: x[1])
+    output=data[-N:]
+    output.reverse()
+    # return output as a list of tuples
+    return output   
