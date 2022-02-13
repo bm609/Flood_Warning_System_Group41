@@ -49,7 +49,6 @@ def stations_within_radius(stations, centre, r):
 
 def rivers_by_station_number(stations, N):
     # return the N rivers with the greatest number of monitoring stations ,
-    from .utils import sorted_by_key
     from collections import Counter
 
     r_L=[]
