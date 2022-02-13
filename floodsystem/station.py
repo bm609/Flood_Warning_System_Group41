@@ -44,13 +44,24 @@ class MonitoringStation:
     def typical_range_consistent(self):
         """method which returns false if the typical range attribute is not in the form (low range, highrange) where 
          highrange > lowrange """
-        d = bool
         if self.typical_range == None:      #if the type is none
             return False
         elif self.typical_range[0] > self.typical_range[1]:
             return False
         else:
             return True
+        
+    def relative_water_level(self):
+        """ method returns latest water level as fraction of typical range"""
+        if self.typical_range_consistent() == False:  #if inconsistent range data, return none
+            return None
+        elif self.latest_level == None:  #if no current level, return none 
+            return None
+        else:
+            levelrange = self.typical_range[1] - self.typical_range[0]   #high range - low range
+            relative_level = (self.latest_level - self.typical_range[0])/levelrange  #divides level above typical low by range to give fraction
+            #will give 0 for latest_level = lower range, -ve for less
+            return relative_level
        
 
 def inconsistent_typical_range_stations(stations):

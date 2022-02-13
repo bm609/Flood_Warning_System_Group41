@@ -40,3 +40,20 @@ def test_inconsistent_typical_range_stations():
     incon = inconsistent_typical_range_stations(stations)
     for i in incon:
         assert i.typical_range_consistent() == False
+
+def test_relative_water_level():
+    test1 = MonitoringStation("","","","",[1,2],"","")  #testing case latest level < lower bound
+    test1.latest_level = 0
+    test2 = MonitoringStation("","","","",[1,2],"","")
+    test2.latest_level = 1.5  #testing regular case - expect 0<x<1 output
+    test3 = MonitoringStation("","","","",[1,2],"","")
+    test3.latest_level = 5 #tessting regular case - expect >1 output
+    test4 = MonitoringStation("","","","",[1,2],"","") #test case with none latest level - should return none
+    test5 = MonitoringStation("","","","",None,"","")  #test case with none range - should return none
+    test5.latest_level = 3
+    assert test1.relative_water_level() == -1
+    assert test2.relative_water_level() == 0.5
+    assert test3.relative_water_level() == 4
+    assert test4.relative_water_level() == None
+    assert test5.relative_water_level() == None
+test_relative_water_level()

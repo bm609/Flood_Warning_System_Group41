@@ -1,6 +1,7 @@
+"""Unit test for geo module"""
+
 from distutils.command.build_clib import build_clib
 import string
-
 from numpy import test
 from floodsystem.geo import stations_by_distance, stations_by_river
 from floodsystem.geo import rivers_with_station
