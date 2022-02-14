@@ -42,7 +42,7 @@ def stations_within_radius(stations, centre, r):
     for i in stations:
         if haversine(i.coord, centre)<=r:
             station_dist_within_r.append((i.name, i.town, haversine(i.coord, centre))) #add current iterations station name, town, and distance. haversine default unit is km
-            station_dist_within_r.sort(key = lambda x: x[2])
+            station_dist_within_r.sort(key = lambda x: x[1])
     return station_dist_within_r
 
 #code for 1E
