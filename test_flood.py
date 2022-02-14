@@ -37,3 +37,6 @@ def test_stations_highest_rel_level():
     assert len(output) == 3 #checks only 3 are in list
     assert output[0] == testA #checks first in list is greatest rel level
     assert output[2] == testC #checks last in list smallest rel level within N
+#def test_plot_water_levels():
+#seems difficult to test, as output is graph
+#mostly just dependent on imput data
