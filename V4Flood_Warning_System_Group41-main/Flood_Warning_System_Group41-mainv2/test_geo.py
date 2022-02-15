@@ -74,7 +74,7 @@ def test_rivers_by_station_number():
     stationH = MonitoringStation("TestH0", "TestH1", "TestH2","TestH3", "TestH4", "River 2","TestH6")
     stations_test=[stationA,stationB,stationC,stationD,stationE,stationF,stationG,stationH]
     
-    N=2
+    N=5
     output,n=rivers_by_station_number(stations_test, N)
     # check the output is correct for N=2
     assert output==[('River 2', 3), ('River 3', 2), ('River 1', 2)]
