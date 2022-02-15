@@ -11,7 +11,6 @@ def run():
     if no_of_data>number:
         print('Extra entries presented due to repeated values')
     print(answer)
-    
 run() 
 
    # return output
