@@ -41,7 +41,7 @@ def stations_within_radius(stations, centre, r):
     
     for i in stations:
         if haversine(i.coord, centre)<=r:
-            station_dist_within_r.append((i.name, i.town, haversine(i.coord, centre))) #add current iterations station name, town, and distance. haversine default unit is km
+            station_dist_within_r.append((i.name, haversine(i.coord, centre))) #add current iterations station name, town, and distance. haversine default unit is km
             station_dist_within_r.sort(key = lambda x: x[1])
     return station_dist_within_r
 
@@ -58,7 +58,14 @@ def rivers_by_station_number(stations, N):
     data=list(Counter(r_L).items())
     # sort and extracting the first N rivers
     data.sort(key = lambda x: x[1])
-    output=data[-N:]
-    output.reverse()
-    # return output as a list of tuples
-    return output   
+    data.reverse()
+    n=N
+
+    while data[N-1][1]==data[n][1]:
+        n+=1
+        if n==len(data):
+            break
+
+    output=data[:n]
+    # return output as a list of tuples, n as the number of data provided
+    return output,n   
