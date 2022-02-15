@@ -6,7 +6,7 @@ from floodsystem.stationdata import build_station_list, update_water_levels
 def run():
     stations = build_station_list()
     update_water_levels(stations)
-    highstat = stations_highest_rel_level(stations, 2)
+    highstat = stations_highest_rel_level(stations, 5)
     #del highstat[0]
     for i in highstat:
         dates, levels = fetch_measure_levels(i.measure_id, datetime.timedelta(days=10))
