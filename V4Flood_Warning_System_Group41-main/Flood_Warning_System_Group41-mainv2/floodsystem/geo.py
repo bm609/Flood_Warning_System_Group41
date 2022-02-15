@@ -22,7 +22,7 @@ def rivers_with_station(stations):
     for i in stations:
         riverstation.add(i.river) #adds river name to set for every station
     return riverstation
-
+'''
 def stations_by_river(stations):
     """input of list of monitoring station type. Output a dict with keys of river names and corresponding
         values of all stations along the respective river"""
@@ -71,3 +71,4 @@ def rivers_by_station_number(stations, N):
     # return output as a list of tuples, n as the number of data provided
     # note if the frequency of two rivers are the same, the order is presented in reverse alphabetical order
     return output,n   
+'''
