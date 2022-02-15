@@ -82,8 +82,5 @@ def test_rivers_by_station_number():
     # check the type of output    
     assert type(output)==list    
 
-#test 1C,1E
-test_stations_within_radius()
-test_rivers_by_station_number()
 
 
