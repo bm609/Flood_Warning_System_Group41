@@ -10,7 +10,7 @@ def run():
     list = stations_within_radius(stations, cam, radius) 
     #print(list)
     by_d=[i[0] for i in list]
-    print('Sorted by distance   :'+'   '.join(map(str,by_d)))
+    #print('Sorted by distance   :'+'   '.join(map(str,by_d)))
     print('Sorted Alphabetically')
     ap=sorted(by_d)
     print(ap)
