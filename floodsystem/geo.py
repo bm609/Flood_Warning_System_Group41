@@ -60,11 +60,14 @@ def rivers_by_station_number(stations, N):
     data.sort(key = lambda x: x[1])
     data.reverse()
     n=N
-
-    while data[N-1][1]==data[n][1]:
-        n+=1
-        if n==len(data):
-            break
+    if n<=len(data):
+        while data[N-1][1]==data[n][1]:
+            n+=1
+            if n==len(data):
+                break
+    else:
+        print("Error: input number is larger than length of data ")
+        return None,0
 
     output=data[:n]
     # return output as a list of tuples, n as the number of data provided
