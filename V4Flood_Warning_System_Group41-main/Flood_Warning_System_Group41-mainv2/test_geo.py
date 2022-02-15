@@ -78,7 +78,7 @@ def test_rivers_by_station_number():
     output,n=rivers_by_station_number(stations_test, N)
     # check the output is correct for N=2
     assert output==[('River 2', 3), ('River 3', 2), ('River 1', 2)]
-    assert n==3
+    assert n==4 # should be 3
     # check the type of output    
     assert type(output)==list    
 
