@@ -48,6 +48,12 @@ def test_stations_within_radius():
     # check the type of output
     assert type(output) == list
     # check the output is correct for r=10
+    assert output==[('TestA2', 0.0), ('TestD2', 0.11119508023353292), ('TestB2', 1.1174967259713906)]
+
+
+
+    
+    
 
 
 #code for 1E
@@ -64,21 +70,15 @@ def test_rivers_by_station_number():
     stationD = MonitoringStation("TestD0", "TestD1", "TestD2","TestD3", "TestD4", "River 2","TestD6")
     stationE = MonitoringStation("TestE0", "TestE1", "TestE2","TestE3", "TestE4", "River 3","TestE6")
     stationF = MonitoringStation("TestF0", "TestF1", "TestF2","TestF3", "TestF4", "River 3","TestF6")
-    stations_test=[stationA,stationB,stationC,stationD,stationE,stationF]
+    stationG = MonitoringStation("TestG0", "TestG1", "TestG2","TestG3", "TestG4", "River 2","TestGG")
+    stationH = MonitoringStation("TestH0", "TestH1", "TestH2","TestH3", "TestH4", "River 2","TestH6")
+    stations_test=[stationA,stationB,stationC,stationD,stationE,stationF,stationG,stationH]
     
     N=2
     output,n=rivers_by_station_number(stations_test, N)
     # check the output is correct for N=2
-    assert output==[('River 3', 2), ('River 1', 2)]
-    assert n==2
+    assert output==[('River 2', 3), ('River 3', 2), ('River 1', 2)]
+    assert n==3
     # check the type of output    
-    assert type(output)==list    
-    for i in range(N):
-        assert type(output[i][0])==str
-        assert type(output[i][1])==int
-
-#test 1C,1E
-#test_stations_within_radius()
-#test_rivers_by_station_number()
-
+    assert type(output)==list   
 
