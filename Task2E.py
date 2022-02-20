@@ -10,8 +10,8 @@ def run():
     #del highstat[0]
     for i in highstat:
         dates, levels = fetch_measure_levels(i.measure_id, datetime.timedelta(days=10))
-        print(dates)
-        print(levels)
+        #print(dates)
+        #print(levels)
         plot_water_levels(i, dates, levels)
 run() #Letcombe Bassett will return an empty graph
         #this is as there is no recent data recorded
