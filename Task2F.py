@@ -15,3 +15,8 @@ def run():
 
 
 run()
+
+# Letcombe Bassett will return an empty graph
+# No recent data recorded
+# As the program displays recent data, the blank graph is correct
+# https://check-for-flooding.service.gov.uk/station/7079 shows lack of data for Letcombe Bassett
