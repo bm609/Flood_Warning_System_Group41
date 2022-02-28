@@ -6,6 +6,7 @@ geographical data.
 
 """
 from haversine import haversine, Unit #importing haversine library for distance calculations
+from .utils import sorted_by_key  # noqa
 
 def stations_by_distance(stations, p):
     """input of list of monitoring station type, a coordinate tuple in (latitude,longitude) form. Output is a list of stations sorted
