@@ -56,4 +56,3 @@ def test_relative_water_level():
     assert test3.relative_water_level() == 4
     assert test4.relative_water_level() == None
     assert test5.relative_water_level() == None
-test_relative_water_level()
