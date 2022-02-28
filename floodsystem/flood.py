@@ -40,6 +40,8 @@ def plot_water_levels(station, dates, levels):
     plt.ylabel('water level (m)')
     plt.xticks(rotation=45)
     plt.title(station.name)
+    if len(dates) == 0:
+        plt.title(station.name + " : No Recent Data Available")  #makes clear if no data available - still shows graph.
     plt.legend
     plt.tight_layout()  
     plt.show()
